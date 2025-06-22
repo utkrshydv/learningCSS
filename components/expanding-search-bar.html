@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expanding search bar</title>
+  <style>
+    div{
+      background-color: rebeccapurple;
+      width: 500px;
+    }
+    input{
+      padding: 10px 15px;
+      background-color: yellowgreen;
+      border: none;
+      height: 40px;
+      width: 280px;
+      border-radius: 50px;
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+      transition: all 0.2s ease;
+    }
+
+    input:focus{
+      width: 100%;
+      
+    }
+
+    input::placeholder{
+      color: rgb(87, 87, 87);
+      font-size: 15px;
+    }
+
+    input:focus::placeholder{
+      color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div><input type="search" placeholder="search..."></div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-gradient button : 
+## gradient button : 
 
 gradient is treated like an image
 
@@ -13,7 +13,7 @@ works only when display:flex
 
 button:hover to appply effects when hovering over that button
 
-flexbox example 1:
+## flexbox example 1:
 
 flex-wrap : wrap -> allows wrap
 flex-shrink: 0/1 -> allows getting smaller
@@ -29,3 +29,14 @@ align-items: center;
 also when we allow wrap and lets's say there are 3 rows with 3 elements eeach 
 
 we use align-content to control the space between the rows
+
+## expanding search bar
+
+input box with type="search"
+
+input:focus{} -> controls what happens when we click on items
+input::placeholder{} -> used for placeholder text
+input:focus::placeholder{} -> what happens to placeholder on focus
+
+also keeping a transition: all 0.2s ease; in input{} controls both in and out of focus
+
