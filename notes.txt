@@ -40,3 +40,20 @@ input:focus::placeholder{} -> what happens to placeholder on focus
 
 also keeping a transition: all 0.2s ease; in input{} controls both in and out of focus
 
+
+yt-video-card: 
+
+<body>  ← flex container
+  └── <div class="video-preview">  ← flex item
+        ├── <div>IMG</div>         ← normal block inside
+        └── <div>TEXT</div>        ← normal block inside
+
+flex only affects the direct children
+
+
+to remove all anchor default styles -> a{
+  all: unset
+}
+
+box-shadow: offset-x offset-y blur-radius spread-radius color;
+
