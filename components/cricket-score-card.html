@@ -9,6 +9,12 @@
       padding: 0;
       margin: 0;
     }
+/* 
+    * {
+  background-color: white !important;
+} */
+
+
     body{
       height: 100vh;
       display: flex;
@@ -22,10 +28,14 @@
 
     .date-holder{
       background-color: rebeccapurple;
+      padding-bottom: 10px;
+      width: 80px;
     }
 
     .hero{
-      background-color: red;
+
+      display: flex;
+      justify-content: space-between;
     }
 
     .result{
@@ -33,6 +43,60 @@
       background-color: yellow;
       justify-content: center;
     }
+
+    .flag{
+      background-color: rgb(89, 0, 255);
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+
+    img{
+      width: 50px;
+    }
+
+    /* .score{
+      width: 100%;
+      background-color: pink;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-row{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 70%;
+      text-align: center;
+   
+    } */
+
+    .score{
+      background-color: pink;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    .result{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 20px;
+      font-size: 14px;
+    }
+
+
 
 
 
@@ -46,31 +110,39 @@
   </div>
 
   <div class="hero">
-
     
-
-    <div class="flag">
+    <div class="flag flag-india">
       <img src="../assets/cricket-scorecard/ind-flag.png" />
       <p class="flag-name">India</p>
     </div>
 
-    <div class="flag">
+    <div class="score">
+      <div><p>471</p><p>364</p></div>
+      <div><p>1st</p><p>2nd</p></div>
+      <div><p>465</p><p>365/5</p><p>Target 371</p></div>
+    </div>
+
+
+    <!-- <div class="score">
+      <div class="score-row">
+        <p>471</p>
+        <p>1st</p>
+        <p>465</p>
+      </div>
+      <div class="score-row">
+        <p>364</p>
+        <p>2nd</p>
+        <p>365/5</p>
+        </div>
+    </div> -->
+
+
+    <div class="flag flag-england">
       <img src="../assets/cricket-scorecard/eng-flag.png"/>
       <p class="flag-name">England</p>
     </div>
 
-    <div class="score">
-      <div class="score-first-row">
-      <p>471</p>
-      <p>1st</p>
-      <p>465</p>
-      </div>
-      <div class="score-second-row">
-        <p>364</p>
-        <p>2nd</p>
-        <p>373/5</p>
-      </div>
-    </div>
+
   </div>
    <div class="result">
       <p>ENG won by 5 wickets (84 balls left)</p>
