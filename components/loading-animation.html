@@ -1,36 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>loading-animation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rainbow Loader</title>
 
   <style>
-    *{
+    * {
       padding: 0;
       margin: 0;
+      box-sizing: border-box;
     }
 
-    body{
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background: #111;
     }
 
-    .loader{
+    .loader {
       display: flex;
       gap: 10px;
     }
 
-    .dot{
-      width: 15px;
-      height: 15px;
-      background-color: rgba(11, 114, 210, 0.682);
+    .dot {
+      width: 5px;
+      height: 25px;
       border-radius: 50%;
-
+      animation: bounce 2s infinite ease;
     }
 
+    .dot:nth-child(1) {
+      background-color: red;
+      animation-delay: 0.1s;
+    }
+
+    .dot:nth-child(2) {
+      background-color: orange;
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+      background-color: yellow;
+      animation-delay: 0.3s;
+    }
+
+    .dot:nth-child(4) {
+      background-color: green;
+      animation-delay: 0.4s;
+    }
+
+    .dot:nth-child(5) {
+      background-color: blue;
+      animation-delay: 0.5s;
+    }
+
+    .dot:nth-child(6) {
+      background-color: indigo;
+      animation-delay: 0.6s;
+    }
+
+    .dot:nth-child(7) {
+      background-color: violet;
+      animation-delay: 0.7s;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(0) translateY(0);
+      }
+
+      0%{
+       background-color: red;
+    }
+    14.2857%{
+      background-color: orange;
+    }
+    28.5714%{
+      background-color: red;
+    }
+    42.8571%{
+      background-color: green;
+    }
+    57.1428%{
+      background-color: blue;
+    }
+    71.4285%{
+      background-color: indigo;
+    }
+    85.7142%{
+      background-color: violet;
+    }
+
+      50% {
+        width: 5px;
+        transform: scaleY(2)  translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -39,7 +107,11 @@
     <div class="dot"></div>
     <div class="dot"></div>
     <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
   </div>
-  
+
 </body>
 </html>

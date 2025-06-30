@@ -57,3 +57,147 @@ to remove all anchor default styles -> a{
 
 box-shadow: offset-x offset-y blur-radius spread-radius color;
 
+loading-animation:
+
+attribute selector -> 
+element['attribute']{
+  //styles
+}
+
+eg: 
+a[type='text']{
+  //styles
+}
+
+this selects
+<a href="#" type="text"></a>
+
+nth child -> 
+css pseudo-classs selector used to target elements base on their order within their parent
+
+element:nth-child(n){
+ //styles
+}
+
+n -> number or keyword or formula
+
+
+for eg: 
+
+<ul>
+  <li>One</li>
+  <li>Two ← 🎯</li>
+  <li>Three</li>
+</ul>
+
+
+//to select the 2nd child
+
+li:nth-child(2){
+  color: red;
+}
+
+
+eg: for even numbered childer:
+
+p:nth-child(even){
+  background: lightgray;
+}
+
+eg: for odd numbered children:
+
+p:nth-child(odd){
+  background: lightgray
+}
+
+eg: use formula
+
+div: nth-child(2n){
+  border: 1px solid black;
+}
+
+2n -> 2, 4, 6, 8....
+puts values in place of normal
+
+:nth-child(n) is based on position in the parent, not the type of element.
+
+Example:
+
+html
+Copy
+Edit
+<div>
+  <p>First</p>
+  <span>Second</span>
+  <p>Third</p>
+</div>
+
+<style>
+  p:nth-child(2) {
+    color: red;
+  }
+</style>
+Here, the 2nd child is a <span>, so the rule p:nth-child(2) matches nothing.
+
+✅ If you want to match the 2nd <p> regardless of other elements
+Use :nth-of-type() instead:
+
+css
+Copy
+Edit
+p:nth-of-type(2) {
+  color: red;
+}
+
+animation -> 
+
+used when the element requires more than 2 states 
+or some constant animation
+
+
+we need to first create animation using @keyframe
+
+
+
+.element{
+  animation-duration: {time};
+  animation-name: {animation-name};
+  animation-timing: ease / linear / ease-in / ease-out / ease-in-out;
+  animation-delay: {time};
+  animation-iteration-count: {number};
+  animation-direction: reverse / alternate / normal; 
+  animation-fill-mode: forwards;
+  animation-play-state: running / paused;
+}
+
+//animation-timing -> determines the speed curve of the animation
+
+//animation-delay -> duration for which it has to wait before the animation starts
+
+//animation-iteration-count -> how many times animation repeats
+
+//animation-direction -> reverse : plays 100% to 0% 
+//alternate: plays forward then backwards
+
+//animation-fill-mode -> forwards : stops the animation at the last frame
+
+//animation-play-state -> controls if the element is runnig or paused based on events like hover
+
+//all of this can be combined in a single property 
+
+animation: {animation-time} {animation-name} {animation-timing-function} {animation-delay} {animation-iteration-count} {animation-count}
+
+
+@keyframe {animation-name}{
+  0%{
+    //styles
+  }
+  50%{
+    //styles
+  }
+  100%{
+    //styles
+  }
+}
+
+these 0%..100% value represent some specific duration during the whole process
