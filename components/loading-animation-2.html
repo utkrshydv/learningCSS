@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>loading-animation-2</title>
+
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    body{
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container{
+      display: flex;
+      gap: 20px;
+    }
+
+    .square{
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      animation: anmt 1s infinite ease;
+    }
+
+    @keyframes anmt{
+      0%{
+        transform: rotateZ(45deg);
+        background-color: rgb(255, 15, 235);
+      }
+    
+      100%{
+        transform: rotateZ(135deg);
+        background-color: rgb(73, 18, 255);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  
+</body>
+</html>
