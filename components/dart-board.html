@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart-Board</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .circle-1{
+      height: 200px;
+      width: 200px;
+      background-color: red;
+      border-radius: 50%;
+      position: relative;
+       animation: becomebig 2s 5s  ease-in forwards;
+    }
+
+     .circle-2{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 150px;
+      width: 150px;
+      background-color: rgb(85, 0, 255);
+      border-radius: 50%;
+      translate: -50% -50%;
+       animation: becomebig 2s 5s ease-in forwards;
+    }
+
+     .circle-3{
+       position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      height: 100px;
+      width: 100px;
+      background-color: rgb(246, 255, 0);
+      border-radius: 50%;
+       animation: becomebig 2s 5s  ease-in forwards;
+    }
+
+     .circle-4{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      height: 50px;
+      width: 50px;
+      background-color: rgb(0, 255, 98);
+      border-radius: 50%;
+      animation: becomebig 2s 5s ease-in forwards;
+    }
+
+    @keyframes becomebig {
+      0%{
+        transform: scale(1);
+      }
+
+      100%{
+        transform: scale(6);
+      }
+    }
+
+    #timer{
+      color: rgb(255, 255, 255);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      font-size: 40px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="circle-1">
+    <div class="circle-2">
+      <div class="circle-3">
+        <div class="circle-4">
+           <div id="timer">5</div></div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <script>
+    let timeleft = 5;
+    const timerElement = document.getElementById("timer");
+
+      const countdown = setInterval(() => {
+      timeleft--;
+      if (timeleft >= 0) {
+        timerElement.textContent = timeleft;
+      }
+      if (timeleft <= 0) {
+        clearInterval(countdown);
+      }
+    }, 1000)
+  </script>
+  
+</body>
+</html>

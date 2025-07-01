@@ -57,7 +57,7 @@ to remove all anchor default styles -> a{
 
 box-shadow: offset-x offset-y blur-radius spread-radius color;
 
-loading-animation:
+## loading-animation:
 
 attribute selector -> 
 element['attribute']{
@@ -201,3 +201,101 @@ animation: {animation-time} {animation-name} {animation-timing-function} {animat
 }
 
 these 0%..100% value represent some specific duration during the whole process
+
+
+## dart-board:
+
+visibilty: hidden -> hides element but reserves the space
+
+display: none -> hides element, doesnt reserve space
+
+position: static / relative / absolute / fixed / sticky
+
+default -> static
+
+1. static (default)
+This is the default position.
+
+The element follows the normal document flow.
+
+You can’t use top, left, right, or bottom with it.
+
+div {
+  position: static;
+}
+
+2. relative
+The element stays in its original place, but you can move it slightly using top, left, etc.
+
+Space it originally occupied is still reserved.
+
+div {
+  position: relative;
+  top: 20px;  /* Moves down 20px */
+  left: 30px; /* Moves right 30px */
+}
+🧠 Think of this as: “Move me a bit from where I would normally be.”
+
+3. absolute
+
+The element is removed from normal flow (no space reserved).
+
+It's positioned relative to the nearest parent that has position: relative or absolute or fixed. If none exists, it uses the <html> (page itself).
+
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+🧠 Use absolute when you want to place something freely inside a box (like badges, tooltips, overlays).
+
+4. fixed
+The element is positioned relative to the browser window.
+
+It stays in place even when the page scrolls.
+
+.fixed-box {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+🧠 Use this for things like: sticky navbars, chat buttons, or back to top icons.
+
+5. sticky
+A hybrid of relative + fixed.
+
+It behaves like relative until you scroll, then it becomes fixed.
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+🧠 Perfect for sticky headers or sidebars that stay in view while scrolling
+
+ What is setInterval?
+setInterval(fn, time) is a loop that runs the function fn every time milliseconds — forever, unless you stop it.
+
+So this:
+
+js
+Copy
+Edit
+const id = setInterval(() => {
+  console.log("Hi!");
+}, 1000);
+Will print "Hi!" every second forever.
+
+🔥 Why use clearInterval()?
+To stop the interval from running forever.
+
+You use:
+
+js
+Copy
+Edit
+clearInterval(id);
+To stop the interval with the ID returned by setInterval().
