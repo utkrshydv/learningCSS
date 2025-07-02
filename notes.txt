@@ -73,7 +73,7 @@ this selects
 <a href="#" type="text"></a>
 
 nth child -> 
-css pseudo-classs selector used to target elements base on their order within their parent
+css pseudo-classs selector used to target elements based on their order within their parent
 
 element:nth-child(n){
  //styles
@@ -123,9 +123,6 @@ puts values in place of normal
 
 Example:
 
-html
-Copy
-Edit
 <div>
   <p>First</p>
   <span>Second</span>
@@ -281,9 +278,6 @@ setInterval(fn, time) is a loop that runs the function fn every time millisecond
 
 So this:
 
-js
-Copy
-Edit
 const id = setInterval(() => {
   console.log("Hi!");
 }, 1000);
@@ -294,8 +288,51 @@ To stop the interval from running forever.
 
 You use:
 
-js
-Copy
-Edit
 clearInterval(id);
 To stop the interval with the ID returned by setInterval().
+
+
+## word-carousel: 
+
+selectors ->
+
+div p{
+  //styles
+}
+
+this selects all p inisde div
+
+div > p{
+  //styles
+}
+
+selects immediate paragraph child
+
+
+div+p{
+  //styles
+}
+
+selects paragraphs whose previous siblings are div
+
+for eg: 
+
+<div>
+
+<div></div>
+<p></p> <- selected
+</div>
+<p></p> <- selected
+
+both are selected
+
+::before and  ::after -> pseudo elements
+they insert virtual elements before or after the actual content of an html element without changing the html element
+
+.element::before {
+  content: "Hello ";
+}
+
+.element::after {
+  content: "!";
+}

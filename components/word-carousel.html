@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Word Carousel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fdfdfd;
+    }
+
+    h1::after {
+      content: "";
+      animation: 6s wordSlide  infinite;
+    }
+
+    @keyframes wordSlide {
+      0% {
+        content: "Vo kabhi thi gana, kabhi thikana";
+      }
+      20% {
+        content: "Kabhi thi pyar aur kabhi di sahara";
+      }
+      40%{
+        content: "Kabhi thi varsha, kabhi thi chaata";
+      }
+      60% {
+        content: "Kabhi thi dost aur kabhi thi juwala";
+      }
+      80% {
+        content: "Kabhi tha gam mai to aati bas yaha par";
+      }
+      100%{
+        content: "Vo kabhi thi gana, kabhi thikana";
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>
+</body>
+</html>
