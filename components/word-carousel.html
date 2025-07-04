@@ -3,42 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <title>Word Carousel</title>
+
+  <!-- 🌟 Font Imports -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      font-family: 'DM Serif Display', sans-serif;
+      font-size: 24px;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #fdfdfd;
+      animation: bgSlide 12s infinite;
+      color: #fdfdfd;
+      text-align: center;
+      transition: background 1s ease;
     }
 
-    h1::after {
+    h1::before {
       content: "";
-      animation: 6s wordSlide  infinite;
+      animation: wordSlide 12s infinite;
     }
+
+    h1 {
+      /* Add Text Shadow */
+      text-shadow: 2px 2px 5px rgb(0, 0, 0); 
+   
+    }
+
 
     @keyframes wordSlide {
       0% {
-        content: "Vo kabhi thi gana, kabhi thikana";
+        content: "Vo kabhi thi गाना, kabhi ठिकाना";
       }
-      20% {
-        content: "Kabhi thi pyar aur kabhi di sahara";
+      12.5% {
+        content: "Kabhi thi प्यार aur kabhi दी सहारा";
       }
-      40%{
-        content: "Kabhi thi varsha, kabhi thi chaata";
+      25% {
+        content: "Kabhi thi वर्षा, kabhi thi छाता";
       }
-      60% {
-        content: "Kabhi thi dost aur kabhi thi juwala";
+      37.5% {
+        content: "Kabhi thi दोस्त aur kabhi thi ज्वाला";
       }
-      80% {
-        content: "Kabhi tha gam mai to aati bas yaha par";
+      50% {
+        content: "Kabhi tha ग़म mai to aati bas यहाँ पर";
       }
-      100%{
-        content: "Vo kabhi thi gana, kabhi thikana";
+      62.5% {
+        content: "Kabhi vo नाक me dum jaise ज़ुख़ाम है";
+      }
+      75% {
+        content: "Utha mai कलम ke dam par, नहीं रहना यहाँ calm";
+      }
+      87.5% {
+        content: "Tabhi L आएगा silent इस नाम में";
+      }
+      100% {
+        content: "Vo kabhi thi गाना, kabhi ठिकाना";
       }
     }
+@keyframes bgSlide {
+  0% {
+    background: linear-gradient(120deg, #6a11cb, #2575fc);
+  }
+  12.5% {
+    background: linear-gradient(120deg, #ff4e50, #f9d423);
+  }
+  25% {
+    background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045);
+  }
+  37.5% {
+    background: linear-gradient(120deg, #ff6a00, #ee0979);
+  }
+  50% {
+    background: linear-gradient(120deg, #3a1c71, #d76d77, #ffaf7b);
+  }
+  62.5% {
+    background: linear-gradient(120deg, #11998e, #38ef7d);
+  }
+  75% {
+    background: linear-gradient(120deg, #fc466b, #3f5efb);
+  }
+  87.5% {
+    background: linear-gradient(120deg, #f83600, #f9d423);
+  }
+  100% {
+    background: linear-gradient(120deg, #6a11cb, #2575fc);
+  }
+}
+
+
+
+
+
+
+
+    
   </style>
 </head>
 <body>
