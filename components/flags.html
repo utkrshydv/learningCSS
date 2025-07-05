@@ -15,7 +15,20 @@
       height: 100vh;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+
     }
+
+    #now-playing{
+      position: relative;
+      top: 10px;
+      display: block;
+      padding: 10px 20px 10px 20px;
+      background-color: rgb(215, 214, 214);
+      border-radius: 20px;
+      color: rgb(0, 0, 0);
+    }
+
     .container{
       display: flex;
       flex-wrap: wrap;
@@ -113,7 +126,7 @@
   grid-template-rows: 0.5fr 1fr 0.5fr;
   height: 200px;
   width: 300px;
-  background-image: url('assets/flags/Spain_coat_of_arms_detailed.png');
+  background-image: url('../assets/flags/Spain_coat_of_arms_detailed.png');
   background-size: 60px;
   background-repeat: no-repeat;
   background-position: center;
@@ -209,6 +222,17 @@
   transform: translateX(-50%);
 }
 
+.zoom {
+  transition: transform 0.3s ease; 
+}
+
+
+
+.zoom:hover{
+  transform: scale(1.05) ;
+ box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
 
 
   </style>
@@ -218,47 +242,142 @@
     <div class="container">    
       
       
-    <div class="france">
+    <div class="zoom france">
       <div></div>
       <div></div>
       <div></div>
     </div>
 
 
-    <div class="germany">
+    <div class="zoom germany">
       <div></div>
       <div></div>
       <div></div>
     </div>
 
-   <div class="italy">
+   <div class="zoom italy">
       <div></div>
       <div></div>
       <div></div>
     </div>
 
-    <div class="spain">
+    <div class="zoom spain">
       <div></div>
-      <div><img src="../assets/flags/Spain_coat_of_arms_detailed.png"/></div>
+      <div><img src="../../assets/flags/Spain_coat_of_arms_detailed.png"/></div>
       <div></div>
     </div>
 
-    <div class="brazil">
+    <div class="zoom brazil">
       <div class="rotate">
       <div class="diamond"></div>
       <div class="circle">
-        <img src="../assets/flags/brazil-stars-states.png"/>
+        <img src="../../assets/flags/brazil-stars-states.png"/>
       </div>
       </div>
     </div>
 
-    <div class="england">
+    <div class="zoom england">
       <div class="vertical"></div>
       <div class="horizontal"></div>
     </div>
 
-    </div>
     
+
+    </div>
+
+    <div id="now-playing">hover over a flag to play a song</div>
+
+  <audio id="france-audio" src="../assets/flags/france.mp3"></audio>
+  <audio id="germany-audio" src="../assets/flags/german.mp3"></audio>
+  <audio id="italy-audio" src="../assets/flags/italy.mp3"></audio>
+  <audio id="spain-audio" src="../assets/flags/spanish.mp3"></audio>
+  <audio id="brazil-audio" src="../assets/flags/brazil.mp3"></audio>
+  <audio id="england-audio" src="../assets/flags/england.mp3"></audio>
+    
+
+    <script>
+const flagAudioMap = {
+  france: {
+    audio: document.getElementById("france-audio"),
+    title: "Vegedream – Ramenez la coupe à la maison",
+    bgcolor: "blue",
+    color: "white",
+    bodyBgColor: "#d0d8f0" // light bluish-gray
+  },
+  germany: {
+    audio: document.getElementById("germany-audio"),
+    title: "Für Elise – Beethoven",
+    bgcolor: "red",
+    color: "white",
+    bodyBgColor: "#f5d7d7" // soft pale red
+  },
+  italy: {
+    audio: document.getElementById("italy-audio"),
+    title: "Bella Ciao – Italian Partisan Song",
+    bgcolor: "green",
+    color: "white",
+    bodyBgColor: "#d6efd6" // gentle mint green
+  },
+  spain: {
+    audio: document.getElementById("spain-audio"),
+    title: "Despacito – Luis Fonsi ft. Daddy Yankee",
+    bgcolor: "#AA151B",
+    color: "white",
+    bodyBgColor: "#fce8e8" // light blush pink
+  },
+  brazil: {
+    audio: document.getElementById("brazil-audio"),
+    title: "Mas que Nada – Jorge Ben Jor",
+    bgcolor: "#009B3A",
+    color: "#F1BF00",
+    bodyBgColor: "#d9f5e3" // soft tropical green
+  },
+  england: {
+    audio: document.getElementById("england-audio"),
+    title: "Beautiful Things – Benson Boone",
+    bgcolor: "red",
+    color: "white",
+    bodyBgColor: "#f2dcdc" // pale grayish red
+  }
+};
+
+
+
+
+    const allAudios = Object.values(flagAudioMap).map(item => item.audio);
+    const nowPlayingDiv = document.getElementById("now-playing");
+    const body = document.querySelector("body");
+
+
+    
+
+    // Loop through each flag
+    Object.keys(flagAudioMap).forEach(country => {
+      const element = document.querySelector(`.${country}`);
+      const audio = flagAudioMap[country].audio;
+      const title = flagAudioMap[country].title;
+      const bgcolor = flagAudioMap[country].bgcolor;
+      const color = flagAudioMap[country].color;
+      const bodyBgColor = flagAudioMap[country].bodyBgColor;
+
+      element.addEventListener("mouseenter", () => {
+        audio.play();
+        nowPlayingDiv.textContent = `🎵 Now Playing: ${title}`;
+          nowPlayingDiv.style.backgroundColor = bgcolor;
+  nowPlayingDiv.style.color = color;
+  body.style.backgroundColor= bodyBgColor;
+      });
+
+      element.addEventListener("mouseleave", () => {
+        audio.pause();
+        audio.currentTime = 0;
+        nowPlayingDiv.textContent="hover over a flag to play a song";
+        nowPlayingDiv.style.backgroundColor = "rgb(215, 214, 214)";
+        nowPlayingDiv.style.color = "black";
+        body.style.backgroundColor="white";
+      });
+    });
+  </script>
   
   
 </body>
