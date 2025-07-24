@@ -336,3 +336,18 @@ they insert virtual elements before or after the actual content of an html eleme
 .element::after {
   content: "!";
 }
+
+
+## github-infocard : 
+
+object-fit: cover ← (best for profile pictures!)
+Fills the container
+
+Keeps aspect ratio
+
+Crops extra parts (like zooming in)
+
+No stretching
+
+Result:
+Image fills the 200x200 box, but parts of it get cropped if they don't fit.
