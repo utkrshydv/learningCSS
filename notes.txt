@@ -351,3 +351,57 @@ No stretching
 
 Result:
 Image fills the 200x200 box, but parts of it get cropped if they don't fit.
+
+
+##toggle-switch :
+
+<label> </label>
+
+1. <label for="toggle">
+A label is a clickable text or area associated with an input.
+
+The for="toggle" attribute connects this label to the input with id="toggle".
+
+Clicking the label will toggle the checkbox (input), because it's linked to it.
+
+<label for="toggle">
+<input type="checkbox" id="toggle">
+some text
+</label>
+
+
+now if i click on some text, checkbox will be ticked
+
+
+In Flexbox:
+flex-direction: row (default) → gap adds horizontal space between items.
+
+flex-direction: column → gap adds vertical space between items.
+
+What does this selector mean: .toggle-input:checked ~ .toggle-switch?
+This is called the general sibling combinator (~). Let's break it down:
+
+.toggle-input:checked ~ .toggle-switch
+✅ This means:
+“Select the .toggle-switch that is a sibling (comes after) a .toggle-input that is :checked.”
+
+In simpler words:
+
+If the checkbox is checked,
+
+And there is a .toggle-switch after it in the same parent (sibling),
+
+Then apply the style (e.g., change color to blue).
+
+Your structure is like:
+
+<label>
+  <input class="toggle-input">
+  <div class="toggle-switch"></div> <!-- this is a sibling AFTER the input -->
+</label>
+
+Since the .toggle-switch is a next sibling, the ~ combinator finds it and changes its style when the checkbox is checked.
+
+What is cubic-bezier?
+It's a custom timing function used in CSS animations and transitions.
+It lets you control the speed curve of an animation — how fast it starts, slows down, or bounces.
